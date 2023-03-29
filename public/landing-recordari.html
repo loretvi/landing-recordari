@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/public/css/tailwind.css" rel="stylesheet">
+
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+      <script>
+        var cont=0;
+    function loopSlider(){
+      var xx= setInterval(function(){
+            switch(cont)
+            {
+            case 0:{
+                $("#slider-1").fadeOut(400);
+                $("#slider-2").delay(400).fadeIn(400);
+                $("#sButton1").removeClass("bg-purple-800");
+                $("#sButton2").addClass("bg-purple-800");
+            cont=1;
+            
+            break;
+            }
+            case 1:
+            {
+            
+                $("#slider-2").fadeOut(400);
+                $("#slider-1").delay(400).fadeIn(400);
+                $("#sButton2").removeClass("bg-purple-800");
+                $("#sButton1").addClass("bg-purple-800");
+               
+            cont=0;
+            
+            break;
+            }
+            
+            
+            }},8000);
+    
+    }
+    
+    function reinitLoop(time){
+    clearInterval(xx);
+    setTimeout(loopSlider(),time);
+    }
+    
+    
+    
+    function sliderButton1(){
+    
+        $("#slider-2").fadeOut(400);
+        $("#slider-1").delay(400).fadeIn(400);
+        $("#sButton2").removeClass("bg-purple-800");
+        $("#sButton1").addClass("bg-purple-800");
+        reinitLoop(4000);
+        cont=0
+        
+        }
+        
+        function sliderButton2(){
+        $("#slider-1").fadeOut(400);
+        $("#slider-2").delay(400).fadeIn(400);
+        $("#sButton1").removeClass("bg-purple-800");
+        $("#sButton2").addClass("bg-purple-800");
+        reinitLoop(4000);
+        cont=1
+        
+        }
+    
+        $(window).ready(function(){
+            $("#slider-2").hide();
+            $("#sButton1").addClass("bg-purple-800");
+            
+    
+            loopSlider();
+         
+            
+        
+        
+        
+        
+        });
+    
+      
+      </script>
+    <title>Recordari</title>
+</head>
+<body class="bg-fixed overflow-auto">
+    <!--Slide-->
+    <!-- component -->
+
+    
+      <div class="sliderAx h-auto">
+          <div id="slider-1" class="container mx-auto">
+            <div class="bg-cover bg-center  h-auto text-white py-24 px-10 object-fill" style="background-image: url('../public/image/ejemplo2.jpg')">
+           <div class="md:w-1/2">
+            <p class="font-bold text-sm uppercase">
+                <br>
+                <br>
+                <br><br>
+                <br>
+                <br>
+                <br><br>
+            </p>
+            <p class="text-3xl font-bold"></p>
+            <p class="text-2xl mb-10 leading-none"></p>
+           
+            </div>  
+        </div> <!-- container -->
+          <br>
+          </div>
+    
+          <div id="slider-2" class="container mx-auto">
+            <div class="bg-cover bg-top  h-auto text-white py-24 px-10 object-fill" style="background-image: url('../public/image/ejemplo1.jpg')">
+           
+      <p class="font-bold text-sm uppercase">
+        <br>
+        <br>
+        <br><br>
+        <br>
+        <br>
+        <br><br>
+      </p>
+            <p class="text-3xl font-bold"></p>
+            <p class="text-2xl mb-10 leading-none"></p>
+             
+        </div> <!-- container -->
+          <br>
+          </div>
+        </div>
+     <div  class="flex justify-between w-12 mx-auto pb-2">
+            <button id="sButton1" onclick="sliderButton1()" class="bg-purple-400 rounded-full w-4 pb-2 " ></button>
+        <button id="sButton2" onclick="sliderButton2() " class="bg-purple-400 rounded-full w-4 p-2"></button>
+      </div>
+    <!--end slide-->
+    <!--inicio de form-->
+    <section class="bg-white dark:bg-gray-900" style="background-image:url(../public/image/fondo.png)">
+        <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
+            <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">Registrate</h2>
+            <p class="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">Creamos un espacio para mantener cerca su recuerdo.</p>
+            <form action="#" class="space-y-8">
+                <div>
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Nombre</label>
+                    <input type="email" id="email" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg 
+                                                          focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 
+                                                          dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 
+                                                          dark:focus:border-primary-500 dark:shadow-sm-light" placeholder="Nombre completo" required>
+                </div>
+                <div>
+                    <label for="subject" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Teléfono</label>
+                    <input type="text" id="subject" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 
+                                                           shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 
+                                                           dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500
+                                                           dark:focus:border-primary-500 dark:shadow-sm-light" 
+                                                           placeholder="55 55 55 55 55" required>
+                </div>
+                <div>
+                    <label for="subject" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Correo Electrónico</label>
+                    <input type="text" id="subject" class="block p-3 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 
+                                                           shadow-sm focus:ring-primary-500 focus:border-primary-500 dark:bg-gray-700 
+                                                           dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500
+                                                           dark:focus:border-primary-500 dark:shadow-sm-light" 
+                                                           placeholder="nombre@ejemplo.com" required>
+                </div>
+                <div>
+                    <label for="subject" class="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-300">Motivo</label>
+                    <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                      <option selected>Seleccione un motivo</option>
+                      <option value="US">Emergencia Funeraria</option>
+                      <option value="CA">Promoción y Cotización</option>
+                      <option value="FR">bolsa de Trabajo</option>
+                      <option value="DE">Convenios</option>
+                    </select>
+                </div>
+                <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 
+                                            sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 
+                                            dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Enviar</button>
+            </form>
+        </div>
+      </section>
+    <!--end form-->
+</body>
+</html>
