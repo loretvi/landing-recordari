@@ -5,137 +5,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/public/css/tailwind.css" rel="stylesheet">
-
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script type="module" src="script.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-      <script>
-        var cont=0;
-    function loopSlider(){
-      var xx= setInterval(function(){
-            switch(cont)
-            {
-            case 0:{
-                $("#slider-1").fadeOut(400);
-                $("#slider-2").delay(400).fadeIn(400);
-                $("#sButton1").removeClass("bg-purple-800");
-                $("#sButton2").addClass("bg-purple-800");
-            cont=1;
-            
-            break;
-            }
-            case 1:
-            {
-            
-                $("#slider-2").fadeOut(400);
-                $("#slider-1").delay(400).fadeIn(400);
-                $("#sButton2").removeClass("bg-purple-800");
-                $("#sButton1").addClass("bg-purple-800");
-               
-            cont=0;
-            
-            break;
-            }
-            
-            
-            }},8000);
-    
-    }
-    
-    function reinitLoop(time){
-    clearInterval(xx);
-    setTimeout(loopSlider(),time);
-    }
-    
-    
-    
-    function sliderButton1(){
-    
-        $("#slider-2").fadeOut(400);
-        $("#slider-1").delay(400).fadeIn(400);
-        $("#sButton2").removeClass("bg-purple-800");
-        $("#sButton1").addClass("bg-purple-800");
-        reinitLoop(4000);
-        cont=0
-        
-        }
-        
-        function sliderButton2(){
-        $("#slider-1").fadeOut(400);
-        $("#slider-2").delay(400).fadeIn(400);
-        $("#sButton1").removeClass("bg-purple-800");
-        $("#sButton2").addClass("bg-purple-800");
-        reinitLoop(4000);
-        cont=1
-        
-        }
-    
-        $(window).ready(function(){
-            $("#slider-2").hide();
-            $("#sButton1").addClass("bg-purple-800");
-            
-    
-            loopSlider();
-         
-            
-        
-        
-        
-        
-        });
-    
       
-      </script>
     <title>Recordari</title>
 </head>
-<body class="bg-fixed overflow-auto">
-    <!--Slide-->
-    <!-- component -->
+<body class="bg-fixed overflow-auto"  style="background-image: url('../public/image/fondo.png')">
+    <!--inicio de Carrucel-->
+    <div class="max-w-2xl mx-auto">
 
-    
-      <div class="sliderAx h-auto">
-          <div id="slider-1" class="container mx-auto">
-            <div class="bg-cover bg-center  h-auto text-white py-24 px-10 object-fill" style="background-image: url('../public/image/ejemplo2.jpg')">
-           <div class="md:w-1/2">
-            <p class="font-bold text-sm uppercase">
-                <br>
-                <br>
-                <br><br>
-                <br>
-                <br>
-                <br><br>
-            </p>
-            <p class="text-3xl font-bold"></p>
-            <p class="text-2xl mb-10 leading-none"></p>
+      <div id="default-carousel" class="relative" data-carousel="static">
+         
+            <div class="overflow-hidden relative h-56 rounded-lg sm:h-64 xl:h-80 2xl:h-96">
+               
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <span class="absolute top-1/2 left-1/2 text-2xl font-semibold text-white -translate-x-1/2 -translate-y-1/2 sm:text-3xl ">Primer Slide</span>
+                    <img src="../public/image/DSC04862.jpg" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+                </div>
+               
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="../public/image/DSC04826.jpg" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+                </div>
+               
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="../public/image/DSC04834.jpg" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+                </div>
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                  <img src="../public/image/DSC04755.jpg" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+                </div>
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                  <img src="../public/image/DSC04767.jpg" class="block absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2" alt="...">
+                </div>
+            </div>
+            
+            
+            <div class=" flex absolute bottom-5 left-1/2 z-30 space-x-3 -translate-x-1/2">
+                <button type="button" class="w-3 h-3 rounded-full bg-black" aria-current="false" aria-label="Slide 1" data-carousel-slide-to="0"></button>
+                <button type="button" class="w-3 h-3 rounded-full bg-black" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="1"></button>
+                <button type="button" class="w-3 h-3 rounded-full bg-black" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="2"></button>
+                <button type="button" class="w-3 h-3 rounded-full bg-black" aria-current="false" aria-label="Slide 2" data-carousel-slide-to="3"></button>
+                <button type="button" class="w-3 h-3 rounded-full bg-black" aria-current="false" aria-label="Slide 3" data-carousel-slide-to="4"></button>
+            </div>
            
-            </div>  
-        </div> <!-- container -->
-          <br>
-          </div>
-    
-          <div id="slider-2" class="container mx-auto">
-            <div class="bg-cover bg-top  h-auto text-white py-24 px-10 object-fill" style="background-image: url('../public/image/ejemplo1.jpg')">
-           
-      <p class="font-bold text-sm uppercase">
-        <br>
-        <br>
-        <br><br>
-        <br>
-        <br>
-        <br><br>
-      </p>
-            <p class="text-3xl font-bold"></p>
-            <p class="text-2xl mb-10 leading-none"></p>
-             
-        </div> <!-- container -->
-          <br>
-          </div>
+            <button type="button" class="flex absolute top-0 left-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-prev>
+                <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-black/50  group-focus:ring-4 group-focus:ring-white  group-focus:outline-none">
+                    <svg class="w-5 h-5 text-white sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    <span class="hidden">Anterior</span>
+                </span>
+            </button>
+            <button type="button" class="flex absolute top-0 right-0 z-30 justify-center items-center px-4 h-full cursor-pointer group focus:outline-none" data-carousel-next>
+                <span class="inline-flex justify-center items-center w-8 h-8 rounded-full sm:w-10 sm:h-10 bg-black/50 0 group-focus:ring-4 group-focus:ring-white  group-focus:outline-none">
+                    <svg class="w-5 h-5 text-white sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    <span class="hidden">Siguiente</span>
+                </span>
+            </button>
         </div>
-     <div  class="flex justify-between w-12 mx-auto pb-2">
-            <button id="sButton1" onclick="sliderButton1()" class="bg-purple-400 rounded-full w-4 pb-2 " ></button>
-        <button id="sButton2" onclick="sliderButton2() " class="bg-purple-400 rounded-full w-4 p-2"></button>
-      </div>
-    <!--end slide-->
+    
+     <!-- <p class="mt-5">Las memorias son las que nos permiten estar conectados con las personas que más queremos. 
+        Incluso cuando éstas han partido. Por eso en J. García López creamos un espacio para mantener cerca su 
+        recuerdo a través de Recordari. Permita que las memorias de su ser querido no solo vivan en su mente, 
+        sino también en el corazón, adquiriendo un espacio especial en Recordari.
+      </p>-->
+        <script src="https://unpkg.com/flowbite@1.4.0/dist/flowbite.js"></script>
+    </div>
+    <!--fin de Carrucel-->
     <!--inicio de form-->
-    <section class="bg-white dark:bg-gray-900" style="background-image:url(../public/image/fondo.png)">
+    <section class="bg-white dark:bg-gray-900" >
         <div class="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
             <h2 class="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">Registrate</h2>
             <p class="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">Creamos un espacio para mantener cerca su recuerdo.</p>
@@ -173,9 +109,10 @@
                       <option value="DE">Convenios</option>
                     </select>
                 </div>
-                <button type="submit" class="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary-700 
-                                            sm:w-fit hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 
-                                            dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Enviar</button>
+                <button class="bg-transparent hover:bg-gray-500 text-gray-700 font-semibold hover:text-white py-2 px-4 border border-gray-500 hover:border-transparent rounded">
+                  Enviar
+                </button>
+               
             </form>
         </div>
       </section>
